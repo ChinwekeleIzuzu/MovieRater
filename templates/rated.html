@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rated Movies
+{% endblock %}
+
+{% block main %}
+    <main class="view" style="background-color:white;">
+        <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Type</th>
+                    <th>Genre</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for history in historys%}
+                    <tr class="message3">
+                        <td>{{history["title"]}}</td>
+                        <td>{{history["category"]}}</td>
+                        <td>{{history["type"]}}</td>
+                        <td>{{history["genre"]}}</td>
+                        <td>{{history["rating"]}}</td>
+                        <td>{{history["comment"]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rate
+{% endblock %}
+
+{% block main %}
+
+    {% if message %}
+        <p class=message>{{ message | safe }}</p>
+    {% endif %}
+    <form action="/rate" method="post" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="form-group">
+            <input class="form-control" name="title" type="text" placeholder= "Movie Title">
+        <div class="form-group">
+            <select class="form-control" name="wood">
+                    <option disabled selected value="">Category</option>
+                    <option>Hollywood</option>
+                    <option>Bollywood</option>
+                    <option>Nollywood</option>
+                    <option>Others(please specify in title)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" name="m_type">
+                    <option disabled selected value="">Movie-Type</option>
+                    <option>Movie</option>
+                    <option>Tv series</option>
+                    <option>Reality</option>
+                    <option>Documentary</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" name="genre">
+                <option disabled selected value="">Genre</option>
+                <option>Thriller</option>
+                <option>Horror</option>
+                <option>Action</option>
+                <option>Drama</option>
+                <option>Comedy</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" name="rating">
+                <option disabled selected value="">Movie rating</option>
+                <option>1</option>
+                <option>2.5</option>
+                <option>3.5</option>
+                <option>4.5</option>
+                <option>5.0</option>
+                <option>6.0</option>
+                <option>7.0</option>
+                <option>8.0</option>
+                <option>9.0</option>
+                <option>10.0</option>
+            </select>
+        </div>
+
+        <div>
+            <h3>Comments about the movie</h3>
+            <textarea name="comments" id="comment" cols="45" rows="10" placeholder="Give a review about the movie(keep it short and do not be a spoiler)"></textarea>
+        </div>
+        <button class="btn" type="submit">Submit ratings</button>
+    </form>
+{% endblock %}
